@@ -1,0 +1,39 @@
+// main
+$fontFamily: "Roboto";
+$fontSize: 14;
+$minWidth: 320;
+$maxWidth: 1920;
+$contentWidth: 1200;
+$containerOffset: 15;
+$containerWidth: calc($contentWidth + ($containerOffset * 2));
+
+// main colors
+$bodyColor: #222; // Цвет body по умолчаниюу
+$mainColor: #fff; // Цвет шрифта по умолчанию
+
+:root {
+
+    // additional colors
+    --black-color: #000;
+    --white-color: #fff;
+    --orange-color: #ff5a30;
+    // z-index
+    --index-minus: -1;
+    --index-min: 5;
+    --index-optimum: 10;
+    --index-max: 15;
+}
+
+
+
+// others vars
+$transitionSpeed: 0.3s;
+$transitionFunction: ease-in-out;
+
+
+// break points
+$desktop: $containerWidth+px;
+$tablet: 1024px;
+$smallTablet: 768px;
+$mobile: 576px;
+$smallMobile: 480px;
