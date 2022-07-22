@@ -1,0 +1,78 @@
+.section-social {
+    position: fixed;
+    bottom: 15px;
+    right: -60px;
+    z-index: 10;
+
+    animation-name: socialAnimate;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    .social {
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+
+
+        &__link {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--green-color);
+            box-shadow: var(--box-shadow-primary);
+            transition: background-color $transitionSpeed $transitionFunction;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: var(--white-color);
+                transition: fill $transitionSpeed $transitionFunction;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: #fff;
+                outline: none;
+
+                svg {
+                    fill: var(--green-color);
+                }
+            }
+        }
+
+        &__link--tg {}
+
+        &__link--whatsapp {}
+
+        &__link--vk {}
+
+        &__link--email {}
+    }
+
+    &.social--active-menu {
+        width: 100%;
+        right: 0;
+        bottom: -60px;
+        animation-name: socialAnimateActive;
+
+        .social {
+            flex-direction: row;
+            justify-content: center;
+
+            &__item {
+                &:not(:first-child) {
+                    margin-top: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

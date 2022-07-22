@@ -1,5 +1,5 @@
 // main
-$fontFamily: "Roboto";
+$fontFamily: "Lato";
 $fontSize: 14;
 $minWidth: 320;
 $maxWidth: 1920;
@@ -8,20 +8,22 @@ $containerOffset: 15;
 $containerWidth: calc($contentWidth + ($containerOffset * 2));
 
 // main colors
-$bodyColor: #222; // Цвет body по умолчаниюу
-$mainColor: #fff; // Цвет шрифта по умолчанию
+$bodyColor: #fff; // Цвет body по умолчаниюу
+$mainColor: #424551; // Цвет шрифта по умолчанию
 
 :root {
 
     // additional colors
     --black-color: #000;
     --white-color: #fff;
-    --orange-color: #ff5a30;
-    // z-index
-    --index-minus: -1;
-    --index-min: 5;
-    --index-optimum: 10;
-    --index-max: 15;
+    --orange-color: #FF4242;
+    --green-color: #17696A;
+    --dark-green-color: #145C5D;
+    // additional colors
+    --header-color: #1E212C;
+
+    // other
+    --box-shadow-primary: rgba(100, 100, 111, 0.35) 0px 7px 29px 0px;
 }
 
 

@@ -20,6 +20,8 @@ import { enableScroll } from '../functions/enable-scroll';
       burger?.setAttribute('aria-label', 'Открыть меню');
       enableScroll();
     }
+    const social = document.querySelector('.section-social')
+    social.classList.toggle('social--active-menu');
   });
 
   overlay?.addEventListener('click', () => {

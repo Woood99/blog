@@ -3,6 +3,7 @@
     padding: 0;
     background: transparent;
     cursor: pointer;
+    line-height: 1;
 
     &:focus {
         outline: none;
@@ -13,4 +14,33 @@
     transition: color $transitionSpeed $transitionFunction,
         background-color $transitionSpeed $transitionFunction,
         border $transitionSpeed $transitionFunction;
+
+    &-primary {
+        background-color: var(--green-color);
+        color: var(--white-color);
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        font-weight: 700;
+        height: 52px;
+        padding: 0 60px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: var(--dark-green-color);
+        }
+
+        &:focus {
+            background-color: var(--dark-green-color);
+        }
+
+        &:active {
+            background-color: var(--dark-green-color);
+        }
+
+        @media (max-width:$tablet) {
+            padding: 0 50px;
+            font-size: 14px;
+        }
+    }
 }
