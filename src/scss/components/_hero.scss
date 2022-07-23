@@ -1,11 +1,12 @@
 .hero {
-    margin-top: var(--header-height);
-    height: calc(var(--vh) - var(--header-height));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    &__inner {}
+
+    &__inner {
+        margin-top: var(--header-height);
+        height: calc(var(--vh) - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     &__subtitle {
         @include adaptiveValue("font-size", 22, 16);
@@ -17,7 +18,9 @@
         @include adaptiveValue("font-size", 50, 32);
         line-height: math.div(60, 50);
     }
-    &__btn{
+
+    &__btn {
         margin-top: 20px;
+        align-self: start;
     }
 }

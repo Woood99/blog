@@ -24,7 +24,9 @@
 
 
 // Реализация бургер-меню
-import { burger } from './functions/burger';
+import {
+    burger
+} from './functions/burger';
 
 
 // ========================================================================================
@@ -41,8 +43,8 @@ import { burger } from './functions/burger';
 
 
 // Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
+import GraphModal from 'graph-modal';
+const modal = new GraphModal();
 
 
 // ========================================================================================
@@ -57,7 +59,9 @@ import { burger } from './functions/burger';
 
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
-import { getHeaderHeight } from './functions/header-height';
+import {
+    getHeaderHeight
+} from './functions/header-height';
 getHeaderHeight();
 window.addEventListener('resize', getHeaderHeight);
 
@@ -72,7 +76,7 @@ window.addEventListener('resize', getHeaderHeight);
 
 
 // Подключение файла со слайдерами
-// import "./functions/sliders";
+import "./functions/sliders";
 
 
 // ========================================================================================
