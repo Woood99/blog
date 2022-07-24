@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     background-color: var(--header-color);
-    z-index: 11;
+    z-index: 502;
 
     &__nav {
         @media (max-width:$tablet) {
@@ -35,10 +35,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media (max-width:$tablet){
+
+        @media (max-width:$tablet) {
             height: 60px;
         }
     }
 
     &__burger {}
+
+    @media (max-width:$tablet) {
+        z-index: 11;
+    }
 }

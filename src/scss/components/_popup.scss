@@ -98,15 +98,22 @@
 
         div {
             margin-top: 5px;
+            display: flex;
         }
     }
 
     &__link {
         height: auto;
         padding: 8px;
-
+        display: block;
+        &:not(:first-child) {
+            margin-left: 25px;
+        }
         @media (max-width:$smallTablet) {
             padding: 5px 10px;
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
         }
     }
 }

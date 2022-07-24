@@ -6,11 +6,11 @@ import { enableScroll } from '../functions/enable-scroll';
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
-
+  const social = document.querySelector('.section-social')
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
-
+    social.classList.toggle('social--active-menu');
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
@@ -18,10 +18,9 @@ import { enableScroll } from '../functions/enable-scroll';
     } else {
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
+      social.classList.remove('social-animate--mobile');
       enableScroll();
     }
-    const social = document.querySelector('.section-social')
-    social.classList.toggle('social--active-menu');
   });
 
   overlay?.addEventListener('click', () => {
@@ -29,15 +28,18 @@ import { enableScroll } from '../functions/enable-scroll';
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
+    social.classList.remove('social--active-menu');
+    social.classList.remove('social-animate--mobile');
     enableScroll();
   });
-
   menuItems?.forEach(el => {
     el.addEventListener('click', () => {
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
+      social.classList.remove('social--active-menu');
+      social.classList.remove('social-animate--mobile');
       enableScroll();
     });
   });

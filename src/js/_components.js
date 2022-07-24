@@ -1,1 +1,1 @@
-// import './components/asd';
+import './components/social';
