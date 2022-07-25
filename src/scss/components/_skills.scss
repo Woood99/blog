@@ -1,0 +1,55 @@
+.skills {
+    @include adaptiveValue("padding-top", 75, 40);
+    @include adaptiveValue("padding-bottom", 75, 40);
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin-right: 15px;
+    }
+
+    &__inner {
+        margin-top: 40px;
+
+        @media (max-width:$tablet) {
+            margin-top: 25px;
+        }
+    }
+
+    &__slider {}
+
+    &__slide {}
+
+    &__pagination {
+        margin-top: 20px;
+    }
+}
+
+
+
+.skills-slider {
+    padding: 20px;
+    margin: -20px;
+}
+
+.skills-slide {
+    height: auto;
+    border-radius: 15px;
+    background-color: lighten(#17696A, 7%);
+    // border: 2px solid var(--green-color);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__inner{
+    padding: 30px;
+    }
+    &__img{
+       &--3{
+     
+       }
+    }
+}

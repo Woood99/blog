@@ -1,5 +1,5 @@
 .title-h2 {
-    @include adaptiveValue("font-size", 42, 20);
+    @include adaptiveValue("font-size", 42, 16);
     font-weight: 700;
     line-height: math.div(60, 46);
     color: var(--black-color);
@@ -64,6 +64,14 @@
                 fill: var(--green-color);
             }
         }
+        @media (max-width:$smallTablet){
+            width: 37px;
+            height: 37px;
+            svg{
+                width: 16px;
+                height: 9px;
+            }
+        }
     }
 }
 
@@ -111,8 +119,8 @@
     }
 
     100% {
-        bottom: 15px;
-        right: 15px;
+        bottom: -20px;
+        right: -20%;
         transform: translateX(0) translateY(0);
     }
 }
