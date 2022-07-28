@@ -64,10 +64,12 @@
                 fill: var(--green-color);
             }
         }
-        @media (max-width:$smallTablet){
+
+        @media (max-width:$smallTablet) {
             width: 37px;
             height: 37px;
-            svg{
+
+            svg {
                 width: 16px;
                 height: 9px;
             }
@@ -99,29 +101,23 @@
     }
 }
 
-@keyframes socialAnimateMobile {
+@keyframes socialAnimateActive {
+    0% {
+        right: 15px;
+    }
+
+    90% {
+        right: 15px;
+    }
+
     100% {
-        bottom: 25px;
+        right: -60px;
     }
 }
 
-@keyframes socialAnimateActive {
-    40% {
-        right: 50%;
-        bottom: 50%;
-        transform: translateX(50%) translateY(50%);
-    }
-
-    60% {
-        right: 50%;
-        bottom: 50%;
-        transform: translateX(50%) translateY(50%);
-    }
-
+@keyframes socialAnimateMobile {
     100% {
-        bottom: -20px;
-        right: -20%;
-        transform: translateX(0) translateY(0);
+        bottom: 25px;
     }
 }
 

@@ -78,34 +78,26 @@ function initSliders() {
 
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1.2,
-                spaceBetween: 10,
+                slidesPerView: 2.5,
+                spaceBetween: 15,
                 speed: 800,
                 // touchRatio: 0,
                 // simulateTouch: false,
-                loop: true,
                 // preloadImages: false,
                 // lazy: true,
 
 
-                navigation: {
-                    prevEl: el.closest('.skills').querySelector('.skills-nav__prev'),
-                    nextEl: el.closest('.skills').querySelector('.skills-nav__next'),
-                },
-
-
                 breakpoints: {
-                    320: {
-                        slidesPerView: 2.3,
-                        spaceBetween: 15,
+                    568: {
+                        slidesPerView: 3.5,
                     },
                     768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
+                        slidesPerView: 4.5,
+                        spaceBetween: 15,
                     },
                     1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
+                        slidesPerView: 6,
+                        spaceBetween: 20,
                     },
                 },
                 on: {

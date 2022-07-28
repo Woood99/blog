@@ -80,30 +80,13 @@
     }
 
     &.social-animate {
-        border-radius: 15px;
-        height: calc(42px + 20px);
         background-color: var(--white-color);
         animation-name: socialAnimateActive;
         animation-duration: 4s;
-
-        .social {
-            height: 100%;
-            flex-direction: row;
-            align-items: center;
-            padding: 0 10px;
-
-            &__item {
-                &:not(:first-child) {
-                    margin-top: 0;
-                    margin-left: 20px;
-                }
-            }
-
-            &__link {
-                pointer-events: none;
-                cursor: default;
-            }
-        }
+        transition: padding 0.5s $transitionFunction,
+            border-radius 0.5s $transitionFunction;
+        padding: 10px;
+        border-radius: 14px;
     }
 
     &.social-animate--mobile {

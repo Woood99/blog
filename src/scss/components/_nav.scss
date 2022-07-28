@@ -28,8 +28,11 @@
         line-height: math.div(21, 18);
         font-weight: 500;
         position: relative;
-        transition: color $transitionSpeed $transitionFunction;
         color: var(--white-color);
+
+        &--active {
+            color: var(--orange-color);
+        }
 
         &::before {
             content: '';
@@ -42,17 +45,6 @@
             transform-origin: center;
             transform: scaleX(0);
             transition: transform $transitionSpeed $transitionFunction;
-        }
-
-
-        @media (min-width:1025px) {
-            &:hover {
-                color: var(--orange-color);
-
-                &::before {
-                    transform: scaleX(1);
-                }
-            }
         }
 
         @media (max-width:$tablet) {

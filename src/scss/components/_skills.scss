@@ -1,11 +1,6 @@
 .skills {
     @include adaptiveValue("padding-top", 75, 40);
     @include adaptiveValue("padding-bottom", 75, 40);
-    &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
     &__title {
         margin-right: 15px;
@@ -39,17 +34,16 @@
     height: auto;
     border-radius: 15px;
     background-color: lighten(#17696A, 7%);
-    // border: 2px solid var(--green-color);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    &__inner{
-    padding: 30px;
+
+    &__inner {
+        padding: 30px;
     }
-    &__img{
-       &--3{
-     
-       }
+
+    &__img {
+        &--3 {}
     }
 }
