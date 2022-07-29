@@ -1,0 +1,24 @@
+.about {
+    margin-top: -1px;
+    background-image: url('../img/about-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    @include adaptiveValue("padding-top", 60, 40);
+    @include adaptiveValue("padding-bottom", 60, 40);
+    &__title {
+        color: var(--white-color);
+    }
+
+    &__inner {
+        @include adaptiveValue("margin-top", 60, 40);
+        @include adaptiveValue("font-size", 18, 13);
+        line-height: math.div(24, 18);
+        p{
+            &:not(:first-child){
+                margin-top: 10px;
+            }
+        }
+    }
+}
