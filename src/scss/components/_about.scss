@@ -1,6 +1,6 @@
 .about {
     margin-top: -1px;
-    background-image: url('../img/about-bg.jpg');
+    @include image-set-jpg('../img/about-bg');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--black-color);

@@ -134,6 +134,11 @@
         transform: translateX(0) translateY(0);
     }
 }
+@keyframes animatePop {
+    50% {
+        transform: scale(1.1);
+    }
+}
 
 
 
