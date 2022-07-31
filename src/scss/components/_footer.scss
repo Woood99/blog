@@ -24,7 +24,7 @@
     }
 
     &__link {
-        margin-right: 5%;
+        margin-right: 15%;
 
 
         svg {
@@ -46,6 +46,9 @@
                 animation-timing-function: linear;
                 animation-iteration-count: 2;
             }
+        }
+        @media (max-width:$smallTablet){
+             margin-right: 15%; 
         }
     }
 }
