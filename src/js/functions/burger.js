@@ -14,12 +14,12 @@ import { enableScroll } from '../functions/enable-scroll';
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
-      document.body.style.overflow = 'hidden';
+      disableScroll();
     } else {
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
       social.classList.remove('social-animate--mobile');
-      document.body.style.overflow = 'visible';
+      enableScroll();
     }
   });
 
@@ -30,7 +30,7 @@ import { enableScroll } from '../functions/enable-scroll';
     menu.classList.remove('menu--active');
     social.classList.remove('social--active-menu');
     social.classList.remove('social-animate--mobile');
-    document.body.style.overflow = 'visible';
+    enableScroll();
   });
   menuItems?.forEach(el => {
     el.addEventListener('click', () => {
@@ -40,7 +40,7 @@ import { enableScroll } from '../functions/enable-scroll';
       menu.classList.remove('menu--active');
       social.classList.remove('social--active-menu');
       social.classList.remove('social-animate--mobile');
-      document.body.style.overflow = 'visible';
+      enableScroll();
     });
   });
 })();

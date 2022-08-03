@@ -1,60 +1,49 @@
 function scrollAddedClass() {
-    let header = document.querySelector('.header');
-    let scrollItems = header.querySelectorAll(`[data-scroll]`);
-    let scrollDistance = window.scrollY;
-    let sectionList = document.querySelectorAll(`[data-scroll-section]`);
-    sectionList.forEach(el => {
-        if (el.offsetTop - header.clientHeight <= scrollDistance) {
-            scrollItems.forEach(item => {
-                if (item.hash == `#${el.id}`) {
-                    item.classList.add('nav__link--active');
-                } else {
-                    item.classList.remove('nav__link--active');
-                }
-            });
-        }
-    });
+    if (window.innerWidth >= 1024) {
+        const header = document.querySelector('.header');
+        const anchors = document.querySelectorAll('[data-anchor]');
+        let scrollDistance = window.scrollY;
+        let sectionList = document.querySelectorAll(`[data-anchor-section]`);
+        sectionList.forEach(el => {
+            if (el.offsetTop - header.clientHeight <= scrollDistance) {
+                anchors.forEach(item => {
+                    if (item.hash == `#${el.id}`) {
+                        item.classList.add('nav__link--active');
+                    } else {
+                        item.classList.remove('nav__link--active');
+                    }
+                });
+            }
+        });
+    }
 };
 
-function navAddedClassMobile() {
-    const header = document.querySelector('.header');
-    const navItemsScroll = header.querySelectorAll('[data-scroll]');
-    navItemsScroll.forEach(el => {
-        el.addEventListener('click', () => {
-            navItemsScroll.forEach(el => {
-                el.classList.remove('nav__link--active');
-            });
-            el.classList.add('nav__link--active');
+function scrollTo(element) {
+    if (window.innerWidth >= 1024) {
+        window.scroll({
+            behavior: 'smooth',
+            left: 0,
+            top: element.offsetTop - document.querySelector('.header').clientHeight,
         });
-    })
-}
-
-function navItemActive() {
-    let minResize = false;
-    let maxResize = false;
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024 && !minResize) {
-            minResize = true;
-            maxResize = false;
-            window.addEventListener('scroll', scrollAddedClass);
-            console.log('desktop')
-        } else if (window.innerWidth < 1024 && !maxResize) {
-            maxResize = true;
-            minResize = false;
-            navAddedClassMobile();
-            console.log('mobile');
-        }
-    });
-    if (window.innerWidth >= 1024 && !minResize) {
-        minResize = true;
-        maxResize = false;
-        window.addEventListener('scroll', scrollAddedClass);
-        console.log('desktop')
-    } else if (window.innerWidth < 1024 && !maxResize) {
-        maxResize = true;
-        minResize = false;
-        navAddedClassMobile();
-        console.log('mobile');
+    } else if (window.innerWidth < 1024) {
+        setTimeout(() => {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: element.offsetTop - document.querySelector('.header').clientHeight,
+            });
+        }, 500);
     }
 }
-navItemActive();
+
+if (document.querySelector('[data-anchor]') && document.querySelector('[data-anchor-section]')) {
+    const anchors = document.querySelectorAll('[data-anchor]');
+    anchors.forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            let id = e.currentTarget.getAttribute('href');
+            scrollTo(document.querySelector(id));
+        });
+    });
+    window.addEventListener('scroll', scrollAddedClass);
+}
