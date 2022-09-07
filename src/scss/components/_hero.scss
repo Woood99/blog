@@ -2,6 +2,7 @@
     @include image-set-jpg('../img/hero-bg');
     background-repeat: no-repeat;
     background-size: cover;
+
     &__inner {
         margin-top: var(--header-height);
         height: calc(100vh - var(--header-height));
@@ -15,18 +16,21 @@
     }
 
     &__subtitle {
-        @include adaptiveValue("font-size", 22, 16);
+        @include adaptiveValue("font-size", 22, 15);
         line-height: math.div(30, 22);
     }
 
     &__title {
         margin-top: 10px;
-        @include adaptiveValue("font-size", 50, 32);
+        @include adaptiveValue("font-size", 50, 25);
         line-height: math.div(60, 50);
     }
 
     &__btn {
         margin-top: 20px;
         align-self: start;
+        @media (max-width:$tablet){
+            margin-top: 15px;
+        }
     }
 }

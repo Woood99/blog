@@ -12,7 +12,7 @@
     }
 
     &__inner {
-        @include adaptiveValue("margin-top", 60, 40);
+        @include adaptiveValue("margin-top", 40, 20);
         @include adaptiveValue("font-size", 18, 13);
         line-height: math.div(24, 18);
         p{
