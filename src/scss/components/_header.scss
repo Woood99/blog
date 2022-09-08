@@ -35,13 +35,43 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: height $transitionSpeed $transitionFunction;
 
         @media (max-width:$tablet) {
             height: 60px;
         }
     }
 
-    &__burger {}
+    &__logo {
+        svg {
+            transition: width $transitionSpeed $transitionFunction,
+                height $transitionSpeed $transitionFunction;
+        }
+    }
+
+    &.header-scroll-mini {
+        .header {
+            &__inner {
+                height: 65px;
+
+                @media (max-width:$tablet) {
+                    height: 50px;
+                }
+            }
+
+            &__logo {
+                svg {
+                    width: 87px;
+                    height: 42px;
+
+                    @media (max-width:$tablet) {
+                        width: 72px;
+                        height: 37px;
+                    }
+                }
+            }
+        }
+    }
 
     @media (max-width:$tablet) {
         z-index: 11;

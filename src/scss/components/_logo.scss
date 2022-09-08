@@ -8,10 +8,11 @@
         fill: #fff;
         display: block;
     }
-    @media (max-width:$smallTablet){
-         svg{
-           width: 79px;
-           height: 40px;
-         } 
+
+    @media (max-width:$tablet) {
+        svg {
+            width: 79px;
+            height: 40px;
+        }
     }
 }
