@@ -1,5 +1,5 @@
 function scrollAddedClass() {
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth > 1024) {
         const header = document.querySelector('.header');
         const anchors = document.querySelectorAll('[data-anchor]');
         let scrollDistance = window.scrollY;
@@ -19,18 +19,27 @@ function scrollAddedClass() {
 };
 
 function scrollTo(element) {
-    if (window.innerWidth >= 1024) {
-        window.scroll({
-            behavior: 'smooth',
-            left: 0,
-            top: element.offsetTop - document.querySelector('.header').clientHeight,
-        });
-    } else if (window.innerWidth < 1024) {
+    const header = document.querySelector('.header');
+    if (window.innerWidth > 1024) {
+        if (!header.classList.contains('header-scroll-mini')) {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: element.offsetTop - (header.clientHeight - 10),
+            });
+        } else {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: element.offsetTop - header.clientHeight,
+            });
+        }
+    } else if (window.innerWidth <= 1024) {
         setTimeout(() => {
             window.scroll({
                 behavior: 'smooth',
                 left: 0,
-                top: element.offsetTop - document.querySelector('.header').clientHeight,
+                top: element.offsetTop - header.clientHeight,
             });
         }, 500);
     }

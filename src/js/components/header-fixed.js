@@ -8,4 +8,6 @@ function headerFixed() {
         }
     });
 };
-headerFixed();
+if (window.innerWidth > 1024) {
+    headerFixed();
+}

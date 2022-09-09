@@ -29,7 +29,8 @@
     &__btn {
         margin-top: 20px;
         align-self: start;
-        @media (max-width:$tablet){
+
+        @media (max-width:$tablet) {
             margin-top: 15px;
         }
     }
